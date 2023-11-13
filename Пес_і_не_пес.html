@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body{
+    transition: all .5s;
+  }
+/* Стилі для фактичного чекбокса (прихованого) */
+.myCheckbox {
+  display: none; /* Приховуємо фактичний чекбокс */
+}
+
+/* Стилі для блоку, який виглядає як чекбокс */
+.myBlock {
+  background-color: gray; /* Сірий фон */
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transition: background-color 0.3s; /* Додатковий стиль для плавної зміни кольору */
+  cursor: pointer; /* Змінює відображення курсора на пальцевий, підказуючи на інтерактивний елемент */
+}
+
+/* Стилі для блоку при активації чекбокса */
+.myCheckbox:checked + .myBlock {
+  background-color: lightblue; /* Змінюємо фон при активованому чекбоксі */
+}
+div .apple:only-child{
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+</style>
+</head>
+<body>
+  <input type="checkbox" class="myCheckbox" id="myCheckbox">
+  <div >
+    <div class="pickle"></div>
+    <div class="apple"></div>
+  </div>
+  <div >
+    <div class="apple"></div>
+  </div>
+  <div class="myBlock"></div>
+</body>
+</html>

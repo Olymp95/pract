@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disable Button Until Checkbox Is Checked</title>
+    <style>
+        /* Стилізація для блоку */
+        #myBlock {
+            width: 100px;
+            height: 100px;
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <label>
+        <input type="checkbox" id="gdai_calculator_step4_licence_checkbox"> Активувати чекбокс
+    </label>
+    <button id="gdai_calculator_step4_button_sub">Натиснути кнопку</button>
+    <div id="myBlock"></div>
+    <script>
+        const checkbox = document.getElementById('gdai_calculator_step4_licence_checkbox');
+        const button = document.getElementById('gdai_calculator_step4_button_sub');
+        
+        const block = document.getElementById('myBlock');
+
+        button.addEventListener('click', function() {
+            if (checkbox.checked) {
+                // Створення нового блоку при активованому чекбоксі
+                const newBlock = document.createElement('div');
+                newBlock.style.width = '100px';
+                newBlock.style.height = '100px';
+                newBlock.style.backgroundColor = '#4CAF50';
+                document.body.appendChild(newBlock);
+            }
+        });
+        // Додамо обробник події, який вимикає кнопку, якщо чекбокс не активований
+        checkbox.addEventListener('change', function() {
+            button.disabled = !checkbox.checked;
+        });
+    </script>
+</body>
+</html>
